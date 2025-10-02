@@ -3,23 +3,25 @@
 
 int main(int argc, char *argv[])
 {
-    int x, y;
-    char op;
+    int x;
+    int trial = 0;
+    int ans = 59;
 
-    printf("input x, op, y: ");
-    scanf("%i %c %i", &x, &op, &y);
-
-    if (op == '+')
-        printf("%i %c %i = %i\n", x, op, y, x+y);
-    else if (op == '-')
-        printf("%i %c %i = %i\n", x, op, y, x-y);
-    else if (op == '*')
-        printf("%i %c %i = %i\n", x, op, y, x*y);
-    else if (op == '/')
-        printf("%i %c %i = %i\n", x, op, y, x/y);
-    else
-        return 0;
-
-    system("PAUSE");	
+    do
+    {
+        printf("Guess a number: ");
+        scanf("%d", &x);
+        
+        if (x < ans)
+            printf("low!\n");
+        else if (x > ans)
+            printf("high!\n");
+            
+        trial++;
+    } while (x != ans);
+    
+    printf("Congratulation! trial is %i\n", trial);
+    
+    system("PAUSE");
     return 0;
 }
