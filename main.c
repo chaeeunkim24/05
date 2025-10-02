@@ -4,15 +4,17 @@
 int main(int argc, char *argv[])
 {
     int x;
+    int i;
+    int sum = 0;
     
-    printf("정수 하나를 입력하세요: ");
+    printf("input a number: ");
     scanf("%i", &x);
-  
-    if (x < 0)
-       printf("x = %i\n", -x);
-    else
-        printf("x = %i\n", x);
-   
+    
+    for (i=1 ; i <= x ; i++)
+        sum = sum + i;
+    
+    printf("the result is %i\n", sum);
+        
     system("PAUSE");	
     return 0;
 }
